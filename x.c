@@ -216,7 +216,7 @@ static char *opt_font  = NULL;
 static char *opt_io    = NULL;
 static char *opt_line  = NULL;
 static char *opt_name  = NULL;
-static char *opt_title = NULL;
+static char *opt_title = "namaste";
 static char *opt_permanent_title = NULL;
 static char *opt_dir   = NULL;
 static int opt_geometry_cols;
@@ -1037,8 +1037,8 @@ xclear(int x1, int y1, int x2, int y2)
 void
 xhints(void)
 {
-	XClassHint class = {opt_name ? opt_name : "st",
-	                    opt_class ? opt_class : "St"};
+	XClassHint class = {opt_name ? opt_name : "namaste",
+	                    opt_class ? opt_class : "Namaste"};
 	XWMHints wm = {.flags = InputHint, .input = 1};
 	XSizeHints *sizeh;
 
@@ -3254,7 +3254,7 @@ run:
 		opt_cmd = argv;
 
 	if (!opt_title)
-		opt_title = (opt_line || !opt_cmd) ? "st" : opt_cmd[0];
+		opt_title = (opt_line || !opt_cmd) ? "namaste" : opt_cmd[0];
 
 	setlocale(LC_CTYPE, "");
 	XSetLocaleModifiers("");
